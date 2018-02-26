@@ -1,0 +1,11 @@
+WebApi/AkqaDataServices/bin/
+WebApi/AkqaDataServices/obj/
+WebApi/AkqaDataStore/bin/
+WebApi/AkqaTest/bin/
+WebApi/AkqaTest/obj/Debug/AkqaTest.csproj.FileListAbsolute.txt
+WebApi/AkqaTest/obj/
+WebApi/AkqaDataStore/obj/
+WebApi/AkqaWebApi/bin/
+WebApi/AkqaWebApi/obj/
+WebApi/packages/MSTest.TestAdapter.1.1.11/MSTest.TestAdapter.1.1.11.nupkg
+WebApi/packages/

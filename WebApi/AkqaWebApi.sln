@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AkqaDataServices", "AkqaDataServices\AkqaDataServices.csproj", "{43388DEF-7019-4DFD-9BB8-BB3C452C0A8C}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "AkqaDataStore", "AkqaDataStore\AkqaDataStore.sqlproj", "{ADED13D2-165D-4FFB-ADB8-F02F5646BC77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AkqaTest", "AkqaTest\AkqaTest.csproj", "{FCF0886D-DACB-4DD0-886F-BC2038196448}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AkqaWebApi", "AkqaWebApi\AkqaWebApi.csproj", "{EE534AEC-D768-4DFC-9ED4-E34028329227}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{43388DEF-7019-4DFD-9BB8-BB3C452C0A8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43388DEF-7019-4DFD-9BB8-BB3C452C0A8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43388DEF-7019-4DFD-9BB8-BB3C452C0A8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43388DEF-7019-4DFD-9BB8-BB3C452C0A8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADED13D2-165D-4FFB-ADB8-F02F5646BC77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADED13D2-165D-4FFB-ADB8-F02F5646BC77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADED13D2-165D-4FFB-ADB8-F02F5646BC77}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{ADED13D2-165D-4FFB-ADB8-F02F5646BC77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADED13D2-165D-4FFB-ADB8-F02F5646BC77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADED13D2-165D-4FFB-ADB8-F02F5646BC77}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{FCF0886D-DACB-4DD0-886F-BC2038196448}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCF0886D-DACB-4DD0-886F-BC2038196448}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCF0886D-DACB-4DD0-886F-BC2038196448}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCF0886D-DACB-4DD0-886F-BC2038196448}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE534AEC-D768-4DFC-9ED4-E34028329227}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE534AEC-D768-4DFC-9ED4-E34028329227}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE534AEC-D768-4DFC-9ED4-E34028329227}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE534AEC-D768-4DFC-9ED4-E34028329227}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

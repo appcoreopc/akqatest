@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+  akqawebapi:
+    image: akqawebapi
+    build:
+      context: ./AkqaWebApi
+      dockerfile: Dockerfile
