@@ -7,16 +7,16 @@ using System.Runtime.CompilerServices;
 [assembly: InternalsVisibleTo("AkqaWebApiTest")]
 namespace AkqaWebApi.ServiceLayer
 {
-    public class UserAmountDataService : AppDataObject
+    public class UserAmountDataService : AppDataObject, IAppObjectService<UserAmount, UserModel>
     {
         public UserAmountDataService(IAkqaDataContext context) : base(context)
         {
 
-        }      
+        }
 
         public IEnumerable<UserAmount> GetAll()
         {
-            return base._context.UserAmount;
+            return base._context.UserAmount.ToList();
         }
 
         public IEnumerable<UserAmount> GetAll(int skipAmount, int takeAmount)
@@ -53,12 +53,9 @@ namespace AkqaWebApi.ServiceLayer
                         employee.Username = requestUser.Username;
                         return base.Save<UserAmount>(employee, employee.Id);
                     }
-
                     return false;
-
                 }
             }
-
             return false;
         }
     }

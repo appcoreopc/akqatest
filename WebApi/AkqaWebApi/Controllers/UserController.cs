@@ -20,7 +20,7 @@ namespace AkqaWebApi.Controllers
         public IActionResult Index()
         {
             var userService = new UserAmountDataService(_context);
-            return View();
+            return HttpResultIntention.GetStatusCode(ActionIntent.Get, true, userService.GetAll());           
         }
 
         [HttpPost]
@@ -32,9 +32,7 @@ namespace AkqaWebApi.Controllers
                 return HttpResultIntention.GetStatusCode(ActionIntent.Save, result, null);
             }
 
-            return new BadRequestResult();
-
-           
+            return new BadRequestResult();           
         }
     }
 }

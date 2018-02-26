@@ -12,11 +12,12 @@ namespace AkqaWebApiTest
     public class TestBase
     {
         protected IAkqaDataContext _mockContext;
+
         protected UserAmountDataService _userAmountDataService;
 
         protected UserAmount JeremyUser = new UserAmount { Id = 1, Username = "JEREMY", Amount = 8888_00 };
-        protected UserAmount RobUser = new UserAmount { Id = 1, Username = "JEREMY", Amount = 2300_00 };
-        protected UserAmount NickUser = new UserAmount { Id = 1, Username = "JEREMY", Amount = 7700_00 };
+        protected UserAmount RobUser = new UserAmount { Id = 1, Username = "ROB", Amount = 2300_00 };
+        protected UserAmount NickUser = new UserAmount { Id = 1, Username = "NICK", Amount = 7700_00 };
 
         protected void InitTestCase()
         {

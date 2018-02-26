@@ -9,8 +9,6 @@ namespace AkqaWebApiTest.Util
     [TestClass]
     public class HttpResultIntentionTest : TestBase
     {
-
-
         [TestMethod]
         public void ReturnJson()
         {
@@ -32,8 +30,7 @@ namespace AkqaWebApiTest.Util
                 Assert.IsTrue(data.Count == 3);
                 Assert.AreEqual(JeremyUser.Username, data[0].Username);
                 Assert.AreEqual(JeremyUser.Amount, data[0].Amount);
-            }
-
+            }            
         }
 
         [TestMethod]
