@@ -7,6 +7,7 @@ namespace AkqaWebApi
 {
     public class AppConstants
     {
+        public const string AkqaDataStore = "AkqaDataStore";
 
         public const string WebApiVersion = "v1";
 

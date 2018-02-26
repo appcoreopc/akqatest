@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using AkqaDataServices.DataModel;
+using Swashbuckle.AspNetCore.Swagger;
+using Microsoft.EntityFrameworkCore;
 
 namespace AkqaWebApi
 {
@@ -30,14 +29,14 @@ namespace AkqaWebApi
             // Add framework services.
             services.AddMvc();
 
-            // services.AddDbContext<PTSContext>(options => options.UseSqlServer(Configuration.GetConnectionString(AppConstant.AppSettingDataConnection)));
+            services.AddDbContext<AkqaDataStoreContext>(options => options.UseSqlServer(Configuration.GetConnectionString(AppConstants.AkqaDataStore)));
 
             services.AddCors();
 
-            //services.AddSwaggerGen(c =>
-            //{
-            //    c.SwaggerDoc(AppConstants.WebApiVersion, new Info { Title = AppConstants.WebApiTitle, Version = AppConstants.WebApiVersion });
-            //});
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc(AppConstants.WebApiVersion, new Info { Title = AppConstants.WebApiTitle, Version = AppConstants.WebApiVersion });
+            });
 
         }
 
@@ -53,11 +52,11 @@ namespace AkqaWebApi
             {
                 routes.MapRoute("default", "{controller}/{action}/{id?}");
             });
-            
-            //app.UseSwaggerUI(c =>
-            //{
-            //    c.SwaggerEndpoint(AppConstants.SwaggerApiUrl, AppConstants.WebApiTitle);
-            //});
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint(AppConstants.SwaggerApiUrl, AppConstants.WebApiTitle);
+            });
 
         }
     }
