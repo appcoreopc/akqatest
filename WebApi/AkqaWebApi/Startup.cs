@@ -34,10 +34,10 @@ namespace AkqaWebApi
 
             services.AddCors();
 
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc(AppConstants.WebApiVersion, new Info { Title = AppConstants.WebApiTitle, Version = AppConstants.WebApiVersion });
-            });
+            //services.AddSwaggerGen(c =>
+            //{
+            //    c.SwaggerDoc(AppConstants.WebApiVersion, new Info { Title = AppConstants.WebApiTitle, Version = AppConstants.WebApiVersion });
+            //});
 
         }
 
@@ -54,10 +54,10 @@ namespace AkqaWebApi
                 routes.MapRoute("default", "{controller}/{action}/{id?}");
             });
             
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint(AppConstants.SwaggerApiUrl, AppConstants.WebApiTitle);
-            });
+            //app.UseSwaggerUI(c =>
+            //{
+            //    c.SwaggerEndpoint(AppConstants.SwaggerApiUrl, AppConstants.WebApiTitle);
+            //});
 
         }
     }
