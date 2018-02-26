@@ -1,14 +1,15 @@
 ﻿using AkqaDataServices.DataModel;
+using System.Runtime.CompilerServices;
 
+[assembly: InternalsVisibleTo("AkqaWebApiTest")]
 namespace AkqaWebApi.ServiceLayer
 {
     public class AppDataObject
     {        
-        protected AkqaDataStoreContext _context;
+        protected IAkqaDataContext _context;
 
-        public AppDataObject(AkqaDataStoreContext context) => _context = context;
+        public AppDataObject(IAkqaDataContext context) => _context = context;
                 
-
         public bool Remove<T>(params int[] ids) where T : class
         {
             foreach (var item in ids)

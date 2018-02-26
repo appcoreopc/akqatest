@@ -2,7 +2,7 @@
 
 namespace AkqaDataServices.DataModel
 {
-    public partial class AkqaDataStoreContext : DbContext
+    public partial class AkqaDataStoreContext : DbContext, IAkqaDataContext
     {
         public AkqaDataStoreContext(DbContextOptions<AkqaDataStoreContext> options) : base(options)
         {

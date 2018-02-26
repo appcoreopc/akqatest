@@ -1,10 +1,11 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Runtime.CompilerServices;
+
+[assembly: InternalsVisibleTo("AkqaWebApiTest")]
 
 namespace AkqaDataServices.DataModel
 {
-    public partial class AkqaDataStoreContext : DbContext
+    public partial class AkqaDataStoreContext : DbContext, IAkqaDataContext
     {
         public virtual DbSet<UserAmount> UserAmount { get; set; }
              

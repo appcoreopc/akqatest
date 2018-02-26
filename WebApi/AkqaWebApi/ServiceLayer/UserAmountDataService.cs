@@ -2,13 +2,16 @@
 using AkqaWebApi.Models;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 
+[assembly: InternalsVisibleTo("AkqaWebApiTest")]
 namespace AkqaWebApi.ServiceLayer
 {
     public class UserAmountDataService : AppDataObject
     {
-        public UserAmountDataService(AkqaDataStoreContext context) : base(context)
+        public UserAmountDataService(IAkqaDataContext context) : base(context)
         {
+
         }      
 
         public IEnumerable<UserAmount> GetAll()
@@ -45,10 +48,11 @@ namespace AkqaWebApi.ServiceLayer
                 if (employee != null)
                 {
                     employee.Amount = requestUser.Amount;
-                    employee.Username = requestUser.Username;                   
+                    employee.Username = requestUser.Username;
+                    return base.Save<UserAmount>(employee, employee.Id);
                 }
 
-                return base.Save<UserAmount>(employee, employee.Id);
+                return false;
 
             }
         }
