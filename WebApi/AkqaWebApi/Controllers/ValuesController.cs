@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AkqaWebApi.Controllers
 {
-    [Route("api/[controller]")]
+    //[Route("api/[controller]")]
     public class ValuesController : Controller
     {
         // GET api/values

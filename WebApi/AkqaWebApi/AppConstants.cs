@@ -14,5 +14,7 @@ namespace AkqaWebApi
         public const string WebApiTitle = "AkqaWebApi";
 
         public const string SwaggerApiUrl = "/swagger/v1/swagger.json";
+
+        public const string JsonResultOkText = "Ok";
     }
 }

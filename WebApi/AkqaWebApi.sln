@@ -1,15 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.14
+VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AkqaDataServices", "AkqaDataServices\AkqaDataServices.csproj", "{43388DEF-7019-4DFD-9BB8-BB3C452C0A8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AkqaDataServices", "AkqaDataServices\AkqaDataServices.csproj", "{43388DEF-7019-4DFD-9BB8-BB3C452C0A8C}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "AkqaDataStore", "AkqaDataStore\AkqaDataStore.sqlproj", "{ADED13D2-165D-4FFB-ADB8-F02F5646BC77}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AkqaTest", "AkqaTest\AkqaTest.csproj", "{FCF0886D-DACB-4DD0-886F-BC2038196448}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AkqaWebApi", "AkqaWebApi\AkqaWebApi.csproj", "{EE534AEC-D768-4DFC-9ED4-E34028329227}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AkqaWebApi", "AkqaWebApi\AkqaWebApi.csproj", "{EE534AEC-D768-4DFC-9ED4-E34028329227}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AkqaWebApiTest", "AkqaWebApiTest\AkqaWebApiTest.csproj", "{61AAE100-2F8A-4CCE-B302-88FEBF9FDDF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AkqaDataServicesTest", "AkqaDataServicesTest\AkqaDataServicesTest.csproj", "{063241BF-5A59-4873-A4B8-9B0E0EB57AD6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,16 +29,23 @@ Global
 		{ADED13D2-165D-4FFB-ADB8-F02F5646BC77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ADED13D2-165D-4FFB-ADB8-F02F5646BC77}.Release|Any CPU.Build.0 = Release|Any CPU
 		{ADED13D2-165D-4FFB-ADB8-F02F5646BC77}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{FCF0886D-DACB-4DD0-886F-BC2038196448}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FCF0886D-DACB-4DD0-886F-BC2038196448}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FCF0886D-DACB-4DD0-886F-BC2038196448}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FCF0886D-DACB-4DD0-886F-BC2038196448}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EE534AEC-D768-4DFC-9ED4-E34028329227}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EE534AEC-D768-4DFC-9ED4-E34028329227}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE534AEC-D768-4DFC-9ED4-E34028329227}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE534AEC-D768-4DFC-9ED4-E34028329227}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61AAE100-2F8A-4CCE-B302-88FEBF9FDDF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61AAE100-2F8A-4CCE-B302-88FEBF9FDDF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61AAE100-2F8A-4CCE-B302-88FEBF9FDDF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61AAE100-2F8A-4CCE-B302-88FEBF9FDDF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{063241BF-5A59-4873-A4B8-9B0E0EB57AD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{063241BF-5A59-4873-A4B8-9B0E0EB57AD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{063241BF-5A59-4873-A4B8-9B0E0EB57AD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{063241BF-5A59-4873-A4B8-9B0E0EB57AD6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {249015B2-73A7-443B-BCF6-15275417D351}
 	EndGlobalSection
 EndGlobal

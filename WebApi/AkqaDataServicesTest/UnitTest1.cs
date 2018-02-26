@@ -1,7 +1,6 @@
-﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AkqaTest
+namespace AkqaDataServicesTest
 {
     [TestClass]
     public class UnitTest1

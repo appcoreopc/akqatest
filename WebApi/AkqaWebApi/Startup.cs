@@ -47,15 +47,17 @@ namespace AkqaWebApi
             loggerFactory.AddDebug();
 
             app.UseCors(option => option.WithOrigins("*").AllowAnyMethod().AllowAnyHeader());
-
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute("default", "{controller}/{action}/{id?}");
-            });
+            
+            app.UseSwagger();
 
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint(AppConstants.SwaggerApiUrl, AppConstants.WebApiTitle);
+            });
+
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute("default", "{controller=swagger}/{action=Index}/{id?}");
             });
 
         }

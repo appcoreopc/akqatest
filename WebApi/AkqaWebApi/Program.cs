@@ -10,17 +10,14 @@ namespace AkqaWebApi
 {
     public class Program
     {
-        public static void Main(string[] args)
-        {
-            var host = new WebHostBuilder()
+        public static void Main(string[] args) => new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
-                .UseApplicationInsights()
-                .Build();
-
-            host.Run();
-        }
+                .UseApplicationInsights().UseUrls("http://localhost:5050")
+                .Build().Run();
+        
+      
     }
 }
