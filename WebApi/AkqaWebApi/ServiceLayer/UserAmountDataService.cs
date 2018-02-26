@@ -31,30 +31,35 @@ namespace AkqaWebApi.ServiceLayer
 
         public bool Save(UserModel requestUser)
         {
-            if (!requestUser.Id.HasValue)
+            if (requestUser != null)
             {
-                var user = new UserAmount()
+                if (!requestUser.Id.HasValue)
                 {
-                    Username = requestUser.Username,
-                    Amount = requestUser.Amount                    
-                };
+                    var user = new UserAmount()
+                    {
+                        Username = requestUser.Username,
+                        Amount = requestUser.Amount
+                    };
 
-                return base.Save<UserAmount>(user, null);
-            }
-            else
-            {
-                var employee = FindById<UserAmount>(requestUser.Id.Value);
-
-                if (employee != null)
-                {
-                    employee.Amount = requestUser.Amount;
-                    employee.Username = requestUser.Username;
-                    return base.Save<UserAmount>(employee, employee.Id);
+                    return base.Save<UserAmount>(user, null);
                 }
+                else
+                {
+                    var employee = FindById<UserAmount>(requestUser.Id.Value);
 
-                return false;
+                    if (employee != null)
+                    {
+                        employee.Amount = requestUser.Amount;
+                        employee.Username = requestUser.Username;
+                        return base.Save<UserAmount>(employee, employee.Id);
+                    }
 
+                    return false;
+
+                }
             }
+
+            return false;
         }
     }
 }
