@@ -69,8 +69,8 @@ namespace AkqaWebApiTest.Controllers
             // Fake save Ok //
             context.SaveChanges().Returns(1);
 
-            var userModel = new UserModel { Username = "Edward Lee", Amount = 2000_00, Id = 111 };
-            var fakeUserAmount = new UserAmount() { Username = "Edward Lee", Amount = 2000_00, Id = 111 };
+            var userModel = new UserModel { Username = EdwardLeeUserName, Amount = 2000_00, Id = 111 };
+            var fakeUserAmount = new UserAmount() { Username = EdwardLeeUserName, Amount = 2000_00, Id = 111 };
 
             context.Find<UserAmount>().ReturnsForAnyArgs(fakeUserAmount);
 
@@ -89,8 +89,8 @@ namespace AkqaWebApiTest.Controllers
             // Fake save not successful  //
             context.SaveChanges().Returns(0);
 
-            var userModel = new UserModel { Username = "Edward Lee", Amount = 2000_00, Id = 111 };
-            var fakeUserAmount = new UserAmount() { Username = "Edward Lee", Amount = 2000_00, Id = 111 };
+            var userModel = new UserModel { Username = EdwardLeeUserName, Amount = 2000_00, Id = 111 };
+            var fakeUserAmount = new UserAmount() { Username = EdwardLeeUserName, Amount = 2000_00, Id = 111 };
 
             context.Find<UserAmount>().ReturnsForAnyArgs(fakeUserAmount);
 

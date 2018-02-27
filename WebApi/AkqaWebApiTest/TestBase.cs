@@ -14,10 +14,17 @@ namespace AkqaWebApiTest
         protected IAkqaDataContext _mockContext;
 
         protected UserAmountDataService _userAmountDataService;
+        
+        protected const string JeremyUserName = "JEREMY";
+        protected const string RobUserName = "ROB";
+        protected const string NickUserName = "NICK";
 
-        protected UserAmount JeremyUser = new UserAmount { Id = 1, Username = "JEREMY", Amount = 8888_00 };
-        protected UserAmount RobUser = new UserAmount { Id = 1, Username = "ROB", Amount = 2300_00 };
-        protected UserAmount NickUser = new UserAmount { Id = 1, Username = "NICK", Amount = 7700_00 };
+        protected UserAmount JeremyUser = new UserAmount { Id = 1, Username = JeremyUserName, Amount = 8888_00 };
+        protected UserAmount RobUser = new UserAmount { Id = 1, Username = RobUserName, Amount = 2300_00 };
+        protected UserAmount NickUser = new UserAmount { Id = 1, Username = NickUserName, Amount = 7700_00 };
+        
+        protected const string EdwardLeeUserName = "Edward Lee";
+
 
         protected void InitTestCase()
         {

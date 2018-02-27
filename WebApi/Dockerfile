@@ -24,7 +24,7 @@ RUN dotnet publish -c Release -r linux-x64 -o out
 FROM microsoft/dotnet:2.0-runtime 
 WORKDIR /app
 
-COPY --from=build-env /app/AkqaWebApi/out ./
-#COPY --from=build-env /app/AkqaWebApi/bin/Release/netcoreapp2.0/ ./
+#COPY --from=build-env /app/AkqaWebApi/out ./
+COPY --from=build-env /app/AkqaWebApi/bin/Release/netcoreapp2.0/linux-x64/ ./
 
 ENTRYPOINT ["dotnet", "AkqaWebApi.dll"]

@@ -32,19 +32,6 @@ It also supports logging to console -> Please refer to 12 tenants of microservic
 d - Test project uses NSubstitute as a mocking framework to mock EF Core db context dependencies. 
 
 
-## Docker ## 
-
-Include a docker file which Uses a build image and deploy to a production image. 
-
-Build it:
-
-docker build -t dotnetapp-prod  .
-
-Run it:
-
-docker run -d -p 5050:5050 dotnetapp-prod
-
-
 
 
 
