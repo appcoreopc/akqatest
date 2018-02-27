@@ -44,8 +44,9 @@ namespace AkqaWebApi
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
-            loggerFactory.AddDebug();
 
+            loggerFactory.AddDebug();
+           
             app.UseCors(option => option.WithOrigins("*").AllowAnyMethod().AllowAnyHeader());
             
             app.UseSwagger();

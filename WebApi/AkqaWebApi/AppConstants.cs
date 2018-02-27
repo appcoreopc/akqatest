@@ -16,5 +16,9 @@ namespace AkqaWebApi
         public const string SwaggerApiUrl = "/swagger/v1/swagger.json";
 
         public const string JsonResultOkText = "Ok";
+
+        public const string UserSaveControllerMethodRequest = "UserController save method initiated.";
+        
+        public const string UserSaveControllerMethodStatus = "User/Save database save status:";
     }
 }
