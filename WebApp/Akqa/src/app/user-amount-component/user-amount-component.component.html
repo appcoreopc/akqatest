@@ -9,11 +9,11 @@
           
           <div class="form-group row">
             <div class="cell c1">
-              <label for="empName"> Name :</label>
+              <label for="username"> Name :</label>
             </div> 
 
             <div class="cell c2">   
-              <input id="empName" type="text" maxlength="50" class="form-control text-control" formControlName="username">
+              <input id="username" type="text" maxlength="50" class="form-control text-control" formControlName="username">
         
               <div *ngIf="formErrors.username" class="alert alert-danger">
                 {{ formErrors.username }}
@@ -38,9 +38,9 @@
           </div> 
 
           <div class="form-group row">
-            <button (click)="convertToWords()">Convert</button>
-            </div>
-
+            <button id="saveBtn" (click)="convertToWords()">Save</button>
+            <button id="convetBtn" (click)="convertToWords()">Convert</button>
+           </div>
           
         </div>
       </div>
@@ -48,9 +48,6 @@
     </div> 
     
   </form>
-
-  <p>Form value: {{ userAmountForm.value | json }}</p>
-
   <p> {{ amountInWords }}</p>
   
 </div>

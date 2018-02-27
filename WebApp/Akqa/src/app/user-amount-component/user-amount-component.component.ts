@@ -5,6 +5,8 @@ import * as messageUtil from "../sharedObjects/storeMessageUtil";
 import {FormUtil} from "../sharedObjects/formUtil";
 import {UserAmountModel} from '../models/UserAmountModel';
 import { Store } from '@ngrx/store';
+import "rxjs/add/operator/map";
+import "rxjs/add/operator/debounceTime";
 
 import * as numUtil from "../sharedObjects/numToWord";
 import {
@@ -63,7 +65,7 @@ export class UserAmountComponentComponent implements OnInit {
       
       this.userAmountModel = new UserAmountModel();
       this.userAmountModel.username = '';
-      this.userAmountModel.amount = '0';   
+      this.userAmountModel.amount = 0;   
       
       this.userAmountForm = this.fb.group({
         username: [this.userAmountModel.username, Validators.required ],
