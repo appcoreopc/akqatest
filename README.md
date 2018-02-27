@@ -17,8 +17,7 @@ Proceed to save by clicking on "save".
 
 Might have to do separately :- npm install @angular-devkit/core --save-dev - in case you ran into some trouble. 
 
-## Unit Test ##
-To run unit test, please run ng test or npm test 
+
 
 ## WebApi - This project consists ##
 
@@ -32,6 +31,12 @@ It also supports logging to console -> Please refer to 12 tenants of microservic
 
 d) Test project uses NSubstitute as a mocking framework to mock EF Core db context dependencies. 
 
+## Unit Test ##
+### Front end ### 
+To run unit test, please run ng test or npm test 
+
+### Back end ###
+Run test from test explorer. 
 
 
 
