@@ -42,7 +42,9 @@ Run test from test explorer.
 ## Database ## 
 Database project (AkqaDatastore) will allow you to create the require database and table. 
 
+## Sample output ## 
 
+![alt text](https://github.com/appcoreopc/akqatest/blob/master/sample_akqa.png)
 
 
 
