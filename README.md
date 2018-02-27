@@ -24,12 +24,13 @@ To run unit test, please run ng test or npm test
 
 a) Dataservices which uses - EF Core 1.2.x 
 b) Database proeject deployment to target 
-c - WebApi - which includes swagger ui - providing documentation and easy testing of web service.  It conforms to Http Response 
-in all its responses for example returns 201 for resource creation. 
+c) WebApi - which includes swagger ui - providing documentation and easy testing of web service. You can access swagger ui by browsing : http://localhost:5050/swagger/
+
+WebApi conforms to Http Response in all its responses for example returns 201 for resource creation. 
 
 It also supports logging to console -> Please refer to 12 tenants of microservice for more info. 
 
-d - Test project uses NSubstitute as a mocking framework to mock EF Core db context dependencies. 
+d) Test project uses NSubstitute as a mocking framework to mock EF Core db context dependencies. 
 
 
 
