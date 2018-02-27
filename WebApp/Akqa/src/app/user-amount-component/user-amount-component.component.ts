@@ -85,6 +85,8 @@ export class UserAmountComponentComponent implements OnInit {
 
       this.userAmountModel.username = data.username;
       this.userAmountModel.amount = data.amount;
+
+      this.amountInWords = numUtil.number2words(this.userAmountModel.amount);
       
       for (const field in this.formErrors) {
         // clear previous error message (if any)
@@ -121,12 +123,5 @@ export class UserAmountComponentComponent implements OnInit {
     dispatchIntent(messageType: string, data?: any) {
       messageUtil.dispatchIntent(this.store, messageType, data);
     }
-
-    convertToWords()
-    {      
-      this.amountInWords = numUtil.number2words(this.userAmountModel.amount);
-
-    }
-    
   }
   
