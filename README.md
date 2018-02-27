@@ -36,11 +36,14 @@ d - Test project uses NSubstitute as a mocking framework to mock EF Core db cont
 
 Include a docker file which Uses a build image and deploy to a production image. 
 
-Build it 
+Build it:
+
 docker build -t dotnetapp-prod  .
 
-Run it
+Run it:
+
 docker run -d -p 5050:5050 dotnetapp-prod
+
 
 
 

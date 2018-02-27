@@ -60,7 +60,7 @@ export class UserAmountComponentComponent implements OnInit {
     }
     
     ngAfterViewInit() { 
-      this.dispatchIntent(USERAMOUNT_GET);
+      
     }  
     private configureEditForm() {
       
@@ -118,8 +118,7 @@ export class UserAmountComponentComponent implements OnInit {
     }
 
     save()
-    {
-      debugger;
+    {      
       let data = this.userAmountForm.value as UserAmountModel;
       this.dispatchIntent(USERAMOUNT_SAVE, data);
     }

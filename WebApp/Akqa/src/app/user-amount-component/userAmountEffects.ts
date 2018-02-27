@@ -26,9 +26,7 @@ export class UserAmountEffects {
 
   @Effect() citySave$ = this.actions$
     .ofType(USERAMOUNT_SAVE)
-    .map(action => {
-      debugger;
-      console.log(action.data);
+    .map(action => {    
       return JSON.stringify(action.data);
     }).switchMap(payload => {
       
