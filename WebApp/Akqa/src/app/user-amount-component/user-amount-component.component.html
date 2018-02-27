@@ -9,11 +9,11 @@
           
           <div class="form-group row">
             <div class="cell c1">
-              <label for="empName"> Name :</label>
+              <label for="username"> Name :</label>
             </div> 
 
             <div class="cell c2">   
-              <input id="empName" type="text" maxlength="50" class="form-control text-control" formControlName="username">
+              <input id="username" type="text" maxlength="50" class="form-control text-control" formControlName="username">
         
               <div *ngIf="formErrors.username" class="alert alert-danger">
                 {{ formErrors.username }}
@@ -28,8 +28,8 @@
               <label for="amount">Amount :</label>
             </div> 
             <div class="cell c5">
-              <input id="amount" type="text" maxlength="20" class="form-control text-control" formControlName="amount">         
-              
+              <input id="amount" type="number" min="0.00" max="999999999.00" class="form-control text-control" formControlName="amount">         
+
               <div *ngIf="formErrors.amount" class="alert alert-danger">
                 {{ formErrors.amount }}
               </div> 
@@ -38,9 +38,9 @@
           </div> 
 
           <div class="form-group row">
-            <button (click)="save()">Save</button>
-            <button (click)="convertToWords()">Convert</button>
-          </div>
+            <button id="saveBtn" (click)="save()">Save</button>
+            <button id="convetBtn" (click)="convertToWords()">Convert</button>
+           </div>
           
         </div>
       </div>
@@ -49,7 +49,8 @@
     
   </form>
 
-  <p> Outputs: </p>
+  <p> Outputs</p>
   <p> {{ userAmountModel.username }}</p>
-  <p> {{ amountInWords }}</p>  
+  <p> {{ amountInWords }}</p>
+  
 </div>

@@ -5,6 +5,8 @@ import * as messageUtil from "../sharedObjects/storeMessageUtil";
 import {FormUtil} from "../sharedObjects/formUtil";
 import {UserAmountModel} from '../models/UserAmountModel';
 import { Store } from '@ngrx/store';
+import "rxjs/add/operator/map";
+import "rxjs/add/operator/debounceTime";
 
 import * as numUtil from "../sharedObjects/numToWord";
 import {
@@ -63,7 +65,7 @@ export class UserAmountComponentComponent implements OnInit {
       
       this.userAmountModel = new UserAmountModel();
       this.userAmountModel.username = '';
-      this.userAmountModel.amount = '0';   
+      this.userAmountModel.amount = 0;   
       
       this.userAmountForm = this.fb.group({
         username: [this.userAmountModel.username, Validators.required ],
@@ -83,6 +85,8 @@ export class UserAmountComponentComponent implements OnInit {
 
       this.userAmountModel.username = data.username;
       this.userAmountModel.amount = data.amount;
+
+      this.amountInWords = numUtil.number2words(this.userAmountModel.amount);
       
       for (const field in this.formErrors) {
         // clear previous error message (if any)
@@ -108,21 +112,16 @@ export class UserAmountComponentComponent implements OnInit {
         }        
       });      
     }
+
+    save()
+    {
+      debugger;
+      let data = this.userAmountForm.value as UserAmountModel;
+      this.dispatchIntent(USERAMOUNT_SAVE, data);
+    }
         
     dispatchIntent(messageType: string, data?: any) {
       messageUtil.dispatchIntent(this.store, messageType, data);
     }
-
-    convertToWords()
-    {      
-      this.amountInWords = numUtil.number2words(this.userAmountModel.amount);
-
-    }
-
-    save()
-    {
-      
-    }
-    
   }
   
