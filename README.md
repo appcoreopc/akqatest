@@ -39,6 +39,10 @@ To run unit test, please run ng test or npm test
 Run test from test explorer. 
 
 
+## Database ## 
+Database project (AkqaDatastore) will allow you to create the require database and table. 
+
+
 
 
 
