@@ -118,6 +118,11 @@ export class UserAmountComponentComponent implements OnInit {
       this.amountInWords = numUtil.number2words(this.userAmountModel.amount);
 
     }
+
+    save()
+    {
+      
+    }
     
   }
   

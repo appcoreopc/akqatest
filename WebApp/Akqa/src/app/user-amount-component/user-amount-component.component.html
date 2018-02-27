@@ -38,9 +38,9 @@
           </div> 
 
           <div class="form-group row">
+            <button (click)="save()">Save</button>
             <button (click)="convertToWords()">Convert</button>
-            </div>
-
+          </div>
           
         </div>
       </div>
@@ -49,8 +49,7 @@
     
   </form>
 
-  <p>Form value: {{ userAmountForm.value | json }}</p>
-
-  <p> {{ amountInWords }}</p>
-  
+  <p> Outputs: </p>
+  <p> {{ userAmountModel.username }}</p>
+  <p> {{ amountInWords }}</p>  
 </div>
