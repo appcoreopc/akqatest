@@ -6,6 +6,7 @@ import {FormUtil} from "../sharedObjects/formUtil";
 import {UserAmountModel} from '../models/UserAmountModel';
 import { Store } from '@ngrx/store';
 
+import * as numUtil from "../sharedObjects/numToWord";
 import {
   USERAMOUNT_SAVE, USERAMOUNT_SAVE_SUCCESS,
   USERAMOUNT_SAVE_ERR,  
@@ -25,6 +26,8 @@ export class UserAmountComponentComponent implements OnInit {
   private userAmountModel : UserAmountModel = new UserAmountModel();
   private userAmountForm : FormGroup;
   userSubscription: Subscription;
+
+  amountInWords : string = '';
   
   formErrors = {
     'username': '',
@@ -60,11 +63,11 @@ export class UserAmountComponentComponent implements OnInit {
       
       this.userAmountModel = new UserAmountModel();
       this.userAmountModel.username = '';
-      this.userAmountModel.amount = 0;   
+      this.userAmountModel.amount = '0';   
       
       this.userAmountForm = this.fb.group({
         username: [this.userAmountModel.username, Validators.required ],
-        amount: [this.userAmountModel.amount, Validators.required]     
+        amount: [this.userAmountModel.amount, [Validators.required, Validators.maxLength(9)]]     
       });            
       this.userAmountForm.valueChanges.debounceTime(200).subscribe(data => 
         this.onValueChanged(data)       
@@ -73,9 +76,13 @@ export class UserAmountComponentComponent implements OnInit {
     
     onValueChanged(data?: UserAmountModel) {
       
+      this.amountInWords = '';
       if (!this.userAmountForm) { return; }
       
       const form = this.userAmountForm;
+
+      this.userAmountModel.username = data.username;
+      this.userAmountModel.amount = data.amount;
       
       for (const field in this.formErrors) {
         // clear previous error message (if any)
@@ -104,6 +111,12 @@ export class UserAmountComponentComponent implements OnInit {
         
     dispatchIntent(messageType: string, data?: any) {
       messageUtil.dispatchIntent(this.store, messageType, data);
+    }
+
+    convertToWords()
+    {      
+      this.amountInWords = numUtil.number2words(this.userAmountModel.amount);
+
     }
     
   }

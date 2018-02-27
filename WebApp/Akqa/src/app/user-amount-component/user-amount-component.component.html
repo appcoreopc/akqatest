@@ -32,9 +32,15 @@
               
               <div *ngIf="formErrors.amount" class="alert alert-danger">
                 {{ formErrors.amount }}
-              </div>  
+              </div> 
+
             </div>
           </div> 
+
+          <div class="form-group row">
+            <button (click)="convertToWords()">Convert</button>
+            </div>
+
           
         </div>
       </div>
@@ -44,6 +50,7 @@
   </form>
 
   <p>Form value: {{ userAmountForm.value | json }}</p>
-  
+
+  <p> {{ amountInWords }}</p>
   
 </div>
