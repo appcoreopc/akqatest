@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using AkqaWebApi.Models;
+using Microsoft.Extensions.Logging;
 
 namespace AkqaWebApiTest.Controllers
 {
@@ -13,6 +14,8 @@ namespace AkqaWebApiTest.Controllers
 
     public class UserControllerTest : TestBase
     {
+        ILogger<UserController> _logger = Substitute.For<ILogger<UserController>>();
+
         [TestInitializeAttribute]
         public void TestCaseInit()
         {
@@ -24,8 +27,9 @@ namespace AkqaWebApiTest.Controllers
         public void GetUserAmountOk()
         {
             var options = new DbContextOptions<AkqaDataStoreContext>();         
-            var context = Substitute.For<FakeAkqaDbContext>(options);            
-            var target = new UserController(context);
+            var context = Substitute.For<FakeAkqaDbContext>(options);
+         
+            var target = new UserController(context, _logger);
             
             var result = target.Index();
             var jsonResult = result as JsonResult;
@@ -48,7 +52,7 @@ namespace AkqaWebApiTest.Controllers
         {
             var options = new DbContextOptions<AkqaDataStoreContext>();
             var context = Substitute.For<FakeAkqaDbContext>(options);
-            var target = new UserController(context);
+            var target = new UserController(context, _logger);
 
             var result = target.Save(null);
             
@@ -60,7 +64,7 @@ namespace AkqaWebApiTest.Controllers
         {
             var options = new DbContextOptions<AkqaDataStoreContext>();
             var context = Substitute.For<FakeAkqaDbContext>(options);
-            var target = new UserController(context);
+            var target = new UserController(context, _logger);
 
             // Fake save Ok //
             context.SaveChanges().Returns(1);
@@ -80,7 +84,7 @@ namespace AkqaWebApiTest.Controllers
         {
             var options = new DbContextOptions<AkqaDataStoreContext>();
             var context = Substitute.For<FakeAkqaDbContext>(options);
-            var target = new UserController(context);
+            var target = new UserController(context, _logger);
 
             // Fake save not successful  //
             context.SaveChanges().Returns(0);

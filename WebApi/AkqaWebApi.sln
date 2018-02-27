@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AkqaDataServices", "AkqaDataServices\AkqaDataServices.csproj", "{43388DEF-7019-4DFD-9BB8-BB3C452C0A8C}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "AkqaDataStore", "AkqaDataStore\AkqaDataStore.sqlproj", "{ADED13D2-165D-4FFB-ADB8-F02F5646BC77}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AkqaWebApi", "AkqaWebApi\AkqaWebApi.csproj", "{EE534AEC-D768-4DFC-9ED4-E34028329227}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AkqaWebApiTest", "AkqaWebApiTest\AkqaWebApiTest.csproj", "{61AAE100-2F8A-4CCE-B302-88FEBF9FDDF4}"
@@ -21,12 +19,6 @@ Global
 		{43388DEF-7019-4DFD-9BB8-BB3C452C0A8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43388DEF-7019-4DFD-9BB8-BB3C452C0A8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43388DEF-7019-4DFD-9BB8-BB3C452C0A8C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ADED13D2-165D-4FFB-ADB8-F02F5646BC77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ADED13D2-165D-4FFB-ADB8-F02F5646BC77}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ADED13D2-165D-4FFB-ADB8-F02F5646BC77}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{ADED13D2-165D-4FFB-ADB8-F02F5646BC77}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ADED13D2-165D-4FFB-ADB8-F02F5646BC77}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ADED13D2-165D-4FFB-ADB8-F02F5646BC77}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{EE534AEC-D768-4DFC-9ED4-E34028329227}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EE534AEC-D768-4DFC-9ED4-E34028329227}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE534AEC-D768-4DFC-9ED4-E34028329227}.Release|Any CPU.ActiveCfg = Release|Any CPU
