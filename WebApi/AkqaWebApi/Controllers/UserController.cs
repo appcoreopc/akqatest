@@ -6,7 +6,8 @@ using AkqaWebApi.Util;
 
 namespace AkqaWebApi.Controllers
 {
-    [Route("[controller]")]
+    //[Route("[controller]")]
+    //[Route("api/[controller]")]
     public class UserController : Controller
     {
         private AkqaDataStoreContext _context;
@@ -25,8 +26,8 @@ namespace AkqaWebApi.Controllers
 
         [HttpPost]
         public IActionResult Save([FromBody] UserModel model)
-        {
-            if (model != null && !string.IsNullOrEmpty(model.Username))
+        {         
+           if (model != null && !string.IsNullOrEmpty(model.Username))
             {
                 var result = new UserAmountDataService(_context).Save(model);
                 return HttpResultIntention.GetStatusCode(ActionIntent.Save, result, null);

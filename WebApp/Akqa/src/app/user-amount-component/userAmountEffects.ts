@@ -4,7 +4,6 @@ import { Actions, Effect } from '@ngrx/effects';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 import * as messageUtil from "../sharedObjects/storeMessageUtil";
-
 import {
   USERAMOUNT_SAVE, USERAMOUNT_SAVE_SUCCESS,
   USERAMOUNT_SAVE_ERR,  
@@ -28,13 +27,16 @@ export class UserAmountEffects {
   @Effect() citySave$ = this.actions$
     .ofType(USERAMOUNT_SAVE)
     .map(action => {
+      debugger;
+      console.log(action.data);
       return JSON.stringify(action.data);
     }).switchMap(payload => {
       
+
       return Observable.of(payload)
         .map(action => {
 
-          this.http.post(APPLICATION_HOST + '/employee/save', payload, { headers: headersJson })
+          this.http.post(APPLICATION_HOST + '/user/save', payload, { headers: headersJson })
             .subscribe(res => {
               messageUtil.dispatchIntent(this.store, USERAMOUNT_SAVE_SUCCESS, null);
               messageUtil.dispatchIntent(this.store, PROGRESS_WAIT_HIDE, null);
@@ -66,7 +68,7 @@ export class UserAmountEffects {
     })
     .switchMap(
 
-    payload => this.http.get(APPLICATION_HOST + '/employee/index').map(res => {
+    payload => this.http.get(APPLICATION_HOST + '/user/index').map(res => {
       return { type: USERAMOUNT_GET_OK, data: res };
     }).catch(() => Observable.of({ type: USERAMOUNT_GET_ERR }))
 

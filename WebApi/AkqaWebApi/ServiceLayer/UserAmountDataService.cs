@@ -33,19 +33,7 @@ namespace AkqaWebApi.ServiceLayer
         {
             if (requestUser != null)
             {
-                if (!requestUser.Id.HasValue)
-                {
-                    var user = new UserAmount()
-                    {
-                        Username = requestUser.Username,
-                        Amount = requestUser.Amount
-                    };
-
-                    return base.Save<UserAmount>(user, null);
-                }
-                else
-                {
-                    var employee = FindById<UserAmount>(requestUser.Id.Value);
+                var employee = _context.UserAmount.FirstOrDefault();
 
                     if (employee != null)
                     {
@@ -53,9 +41,18 @@ namespace AkqaWebApi.ServiceLayer
                         employee.Username = requestUser.Username;
                         return base.Save<UserAmount>(employee, employee.Id);
                     }
-                    return false;
-                }
+                    else
+                    {
+                        var user = new UserAmount()
+                        {
+                            Username = requestUser.Username,
+                            Amount = requestUser.Amount
+                        };
+                        return base.Save<UserAmount>(user, null);
+                    }                    
+                
             }
+
             return false;
         }
     }

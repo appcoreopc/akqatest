@@ -61,6 +61,7 @@ namespace AkqaWebApiTest.ServiceLayer
             // Act 
             var saveResults = _userAmountDataService.Save(new UserModel()
             {
+                Id  = 1,
                 Username = "Test",
                 Amount = 2399_00
             });

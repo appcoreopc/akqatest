@@ -4,9 +4,7 @@ const centString = ' CENTS';
 
 export function number2words(n : number)
 {
-    let n1 = Math.floor(n);
-    debugger;
-    
+    let n1 = Math.floor(n);   
     let n2 = fract(n);
     let n3 = numberWord(n1);
     let n4 = numberWord(n2) + centString;        
