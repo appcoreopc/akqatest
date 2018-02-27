@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 
 namespace AkqaWebApi.Controllers
 {
-    
+
 
     public class UserController : Controller
     {
@@ -20,14 +20,14 @@ namespace AkqaWebApi.Controllers
             this._logger = logger;
         }
 
-        [HttpGet]
+        [HttpGet("")]
         public IActionResult Index()
         {
             var userService = new UserAmountDataService(_context);
             return HttpResultIntention.GetStatusCode(ActionIntent.Get, true, userService.GetAll());           
         }
 
-        [HttpPost]
+        [HttpPost(Name ="Save")]
         public IActionResult Save([FromBody] UserModel model)
         {
             _logger.LogInformation(AppConstants.UserSaveControllerMethodRequest);

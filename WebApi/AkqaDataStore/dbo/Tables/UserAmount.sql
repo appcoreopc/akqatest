@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[UserAmount](
 	[id] [int] IDENTITY(1,1) NOT NULL,
 	[username] [varchar](50) NULL,
-	[amount] [decimal](18, 0) NULL,
+	[amount] [decimal](18, 2) NULL,
  CONSTRAINT [PK_UserAmount] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC

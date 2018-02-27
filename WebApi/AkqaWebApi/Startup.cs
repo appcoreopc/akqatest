@@ -35,7 +35,9 @@ namespace AkqaWebApi
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc(AppConstants.WebApiVersion, new Info { Title = AppConstants.WebApiTitle, Version = AppConstants.WebApiVersion });
+                c.SwaggerDoc(AppConstants.WebApiVersion, new Info
+                { Title = AppConstants.WebApiTitle, Version = AppConstants.WebApiVersion
+                });
             });
 
         }
