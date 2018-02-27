@@ -10,11 +10,9 @@ import {USERAMOUNT_SAVE, USERAMOUNT_SAVE_SUCCESS,
 		  return  { status : 1, data : action, type: USERAMOUNT_GET_OK };
 		case USERAMOUNT_SAVE:			 
 		  return  { status : 2, data : action, type: USERAMOUNT_SAVE_SUCCESS };		
-		case USERAMOUNT_SAVE_SUCCESS:
-			console.log(USERAMOUNT_SAVE_SUCCESS);
+		case USERAMOUNT_SAVE_SUCCESS:			
 			return { status : 4, data : action, type: USERAMOUNT_SAVE_SUCCESS }
-		case USERAMOUNT_SAVE_ERR:
-			console.log(USERAMOUNT_SAVE_ERR);
+		case USERAMOUNT_SAVE_ERR:			
 			return  { status : 5, data : action, type: USERAMOUNT_SAVE_ERR };	
 		default:
 			return status;						

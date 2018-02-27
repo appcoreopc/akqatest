@@ -27,9 +27,10 @@ export class UserAmountComponentComponent implements OnInit {
   
   private userAmountModel : UserAmountModel = new UserAmountModel();
   private userAmountForm : FormGroup;
-  userSubscription: Subscription;
+  private userSubscription: Subscription;
 
-  amountInWords : string = '';
+  private amountInWords : string = '';
+  private statusMessage : string = '';
   
   formErrors = {
     'username': '',
@@ -52,7 +53,7 @@ export class UserAmountComponentComponent implements OnInit {
     this.userSubscription = this.store.subscribe(appData => {
       
       this.componentMessageHandle(messageUtil.getMultiMessage(appData,
-        [USERAMOUNT_GET_OK, USERAMOUNT_SAVE_SUCCESS]));
+        [USERAMOUNT_SAVE_ERR, USERAMOUNT_SAVE_SUCCESS]));
       });
       
       this.configureEditForm();  
@@ -102,13 +103,16 @@ export class UserAmountComponentComponent implements OnInit {
       }
     }
         
-    componentMessageHandle(messageAll: Array<any>) {      
-      messageAll.map(message => {        
-        if (message && message.type == USERAMOUNT_GET_OK) {          
-          console.log(message);          
+    componentMessageHandle(messageAll: Array<any>) {    
+
+      messageAll.map(message => {     
+        
+        if (message && message.type == USERAMOUNT_SAVE_ERR) {          
+           this.statusMessage = "Ops! Problem saving user amount to database.";
         }
         
-        if (message && message.type == USERAMOUNT_SAVE_SUCCESS) {          
+        if (message && message.type == USERAMOUNT_SAVE_SUCCESS) {   
+          this.statusMessage = "User and amount has been successfully saved.";
         }        
       });      
     }

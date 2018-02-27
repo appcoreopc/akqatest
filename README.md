@@ -2,12 +2,14 @@
 
 ## Web App ## 
 
-This application uses Angular5/Ngrx-effect/Ngrx-Store as the web front. 
-To run please, goto WebApp\Akqa directory and make sure you have install 
+This application uses Angular5/Ngrx-effect/Ngrx-Store as the web front. Ngrx-store is similiar to redux but reactive way of doing t. We uses it to dispatch status which in turn display makes the app 'fluent'. 
+
+To run please, goto WebApp\Akqa directory and make sure you have install.
 
 a) ng-cli 
-b) npm install to get all the dependencies
-c) finally run ng serve and browse  http:localhost:4200 
+b) execute npm install to get all the dependencies
+c) finally run ng serve 
+d) Browse  http:localhost:4200
 
 You should be able to see the username and amount render as you type. 
 
@@ -28,6 +30,18 @@ in all its responses for example returns 201 for resource creation.
 It also supports logging to console -> Please refer to 12 tenants of microservice for more info. 
 
 d - Test project uses NSubstitute as a mocking framework to mock EF Core db context dependencies. 
+
+
+## Docker ## 
+
+Include a docker file which Uses a build image and deploy to a production image. 
+
+Build it 
+docker build -t dotnetapp-prod  .
+
+Run it
+docker run -d -p 5050:5050 dotnetapp-prod
+
 
 
 
