@@ -110,6 +110,13 @@ export class UserAmountComponentComponent implements OnInit {
         }        
       });      
     }
+
+    save()
+    {
+      debugger;
+      let data = this.userAmountForm.value as UserAmountModel;
+      this.dispatchIntent(USERAMOUNT_SAVE, data);
+    }
         
     dispatchIntent(messageType: string, data?: any) {
       messageUtil.dispatchIntent(this.store, messageType, data);

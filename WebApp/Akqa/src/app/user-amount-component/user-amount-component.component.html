@@ -28,8 +28,8 @@
               <label for="amount">Amount :</label>
             </div> 
             <div class="cell c5">
-              <input id="amount" type="text" maxlength="20" class="form-control text-control" formControlName="amount">         
-              
+              <input id="amount" type="number" min="0.00" max="999999999.00" class="form-control text-control" formControlName="amount">         
+
               <div *ngIf="formErrors.amount" class="alert alert-danger">
                 {{ formErrors.amount }}
               </div> 
@@ -38,7 +38,7 @@
           </div> 
 
           <div class="form-group row">
-            <button id="saveBtn" (click)="convertToWords()">Save</button>
+            <button id="saveBtn" (click)="save()">Save</button>
             <button id="convetBtn" (click)="convertToWords()">Convert</button>
            </div>
           
@@ -48,6 +48,9 @@
     </div> 
     
   </form>
+
+  <p> Outputs</p>
+  <p> {{ userAmountModel.username }}</p>
   <p> {{ amountInWords }}</p>
   
 </div>
