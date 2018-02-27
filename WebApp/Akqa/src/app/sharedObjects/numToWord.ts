@@ -1,7 +1,7 @@
 
 
-var num = "zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen".split(" ");
-var tens = "twenty thirty forty fifty sixty seventy eighty ninety".split(" ");
+var num = "ZERO ONE TWO THREE FOUR FIVE SIX SEVEN EIGHT NINE TEN ELEVEN TWELVE THIRTEEN FOURTEEN FIFTEEN SIXTEEN SEVENTEEN EIGHTEEN NINETEEN".split(" ");
+var tens = "TWENTY THIRTY FOURTY FIFTY SIXTY SEVENTY EIGHTY NINETY".split(" ");
 
 export function number2words(n)
 {
@@ -9,7 +9,7 @@ export function number2words(n)
     let n2 = fract(n);
     let n3 = numberWord(n1);
     let n4 = numberWord(n2) + ' cents';        
-    return n3 + ' ' + n4;
+    return n3 + ' AND ' + n4;
 }
 
 export function numberWord (n) {
