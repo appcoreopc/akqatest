@@ -93,7 +93,6 @@ namespace AkqaWebApiTest.Controllers
             var result = target.Save(userModel);
             Assert.IsInstanceOfType(result, typeof(NoContentResult));
         }
-
-
+        
     }
 }
