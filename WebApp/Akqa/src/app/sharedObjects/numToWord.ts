@@ -2,7 +2,7 @@ const num = "ZERO ONE TWO THREE FOUR FIVE SIX SEVEN EIGHT NINE TEN ELEVEN TWELVE
 const tens = "TWENTY THIRTY FOURTY FIFTY SIXTY SEVENTY EIGHTY NINETY".split(" ");
 const centString = ' CENTS';
 
-export function number2words(n)
+export function number2words(n : number)
 {
     let n1 = Math.floor(n);
     debugger;
