@@ -11,3 +11,6 @@ WebApi/AkqaDataServicesTest/bin/
 WebApi/AkqaDataServicesTest/obj/
 WebApi/AkqaWebApiTest/bin/
 WebApi/AkqaWebApiTest/obj/
+WebApi/AkqaDataServices/out/
+WebApi/AkqaWebApi/out/
+WebApi/AkqaWebApiTest/out/
