@@ -1,8 +1,8 @@
 ﻿# Build it 
-# docker build -t dotnetapp-prod  .
+# docker build -t dotnetapp-akqa  .
 
 # Run it
-# docker run -d -p 5050:5050 dotnetapp-prod
+# docker run -d -p 5050:5050 dotnetapp-akqa
 
 # Browse it 
 # http://192.168.99.100:5050/hello/index
@@ -24,7 +24,9 @@ RUN dotnet publish -c Release -r linux-x64 -o out
 FROM microsoft/dotnet:2.0-runtime 
 WORKDIR /app
 
-#COPY --from=build-env /app/AkqaWebApi/out ./
-COPY --from=build-env /app/AkqaWebApi/bin/Release/netcoreapp2.0/linux-x64/ ./
+COPY --from=build-env /app/AkqaWebApi/out ./
 
 ENTRYPOINT ["dotnet", "AkqaWebApi.dll"]
+
+## Debug point 
+##ENTRYPOINT ["tail", "-f", "/dev/null"]

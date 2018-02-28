@@ -11,7 +11,7 @@ namespace AkqaWebApi
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
-                .UseApplicationInsights().UseUrls("http://localhost:5050")
+                .UseApplicationInsights().UseUrls("http://0.0.0.0:5050")
                 .Build().Run();
         
       
