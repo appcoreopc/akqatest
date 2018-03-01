@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 [assembly: InternalsVisibleTo("AkqaWebApiTest")]
 namespace AkqaWebApi.ServiceLayer
 {
-    public class AppDataObject
+    public class AppDataObject : IAppDataObject
     {        
         protected IAkqaDataContext _context;
 
